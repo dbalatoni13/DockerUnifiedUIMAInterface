@@ -657,9 +657,6 @@ public class DUUIComposer {
                 arr[i].start();
             }
             Instant starttime = Instant.now();
-            while (!_shutdownAtomic.get()) {
-
-            }
 
             AtomicInteger waitCount = new AtomicInteger();
             waitCount.set(0);
