@@ -662,10 +662,10 @@ public class DUUIComposer {
             waitCount.set(0);
             // Wartet, bis die Dokumente fertig verarbeitet wurden.
             while (emptyCasDocuments.size() != _cas_poolsize && !collectionReader.isFinish()) {
-                if (waitCount.incrementAndGet() % 500 == 0) {
+                if (waitCount.incrementAndGet() % 10 == 0) {
                     System.out.println("[Composer] Waiting for threads to finish document processing...");
                 }
-                Thread.sleep(1000 * _workers); // to fast or in relation with threads?
+                Thread.sleep(1000); // to fast or in relation with threads?
 
             }
             System.out.println("[Composer] All documents have been processed. Signaling threads to shut down now...");
